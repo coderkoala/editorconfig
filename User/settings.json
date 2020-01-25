@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+    "blade.format.enable": true,
+    "sync.gist": "2f58cdcc59150e78d2d60aee5f6dd6c9",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Night Owl"
+}
