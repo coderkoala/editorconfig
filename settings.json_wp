@@ -1,0 +1,26 @@
+{
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+    "blade.format.enable": true,
+    "sync.gist": "2f58cdcc59150e78d2d60aee5f6dd6c9",
+    "php.validate.executablePath": "C:\\laragon\\bin\\php\\php-7.2.19-Win32-VC15-x64\\php.exe",
+    "php.executablePath": "C:\\laragon\\bin\\php\\php-7.2.19-Win32-VC15-x64\\php.exe",
+    "phpfmt.php_bin": "C:\\laragon\\bin\\php\\php-7.2.19-Win32-VC15-x64\\php.exe",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Night Owl",
+    "phpcs.showSources": true,
+    "phpcs.standard": "WordPress",
+    "phpcs.executablePath": "C:\\Users\\IamTr\\AppData\\Roaming\\Composer\\vendor\\bin\\phpcs",
+    "phpcs.ignorePatterns": ["*/vendor/*", "*/node_modules/*"],
+    "php-docblocker.returnVoid": false,
+    "php-docblocker.useShortNames": true,
+    "saveAndRun": {
+      "commands": [
+        {
+          "match": "\\.php$",
+          "cmd": "phpcbf -q --standard='WordPress' '${file}'",
+          "silent": true
+        }
+      ]
+    }
+}
