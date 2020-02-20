@@ -1,6 +1,6 @@
 {
     "files.autoSave": "afterDelay",
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+    "terminal.integrated.shell.windows": "C:\\laragon\\bin\\cmder\\Cmder.exe",
     "blade.format.enable": true,
     "sync.gist": "2f58cdcc59150e78d2d60aee5f6dd6c9",
     "php.validate.executablePath": "C:\\laragon\\bin\\php\\php-7.2.19-Win32-VC15-x64\\php.exe",
@@ -10,7 +10,7 @@
     "workbench.colorTheme": "Night Owl",
     "phpcs.showSources": true,
     "phpcs.standard": "WordPress",
-    "phpcs.executablePath": "C:\\Users\\IamTr\\AppData\\Roaming\\Composer\\vendor\\bin\\phpcs",
+    "phpcs.executablePath": "D:\\wp\\wp-content\\plugins\\vendor\\bin\\phpcs",
     "phpcs.ignorePatterns": ["*/vendor/*", "*/node_modules/*"],
     "php-docblocker.returnVoid": false,
     "php-docblocker.useShortNames": true,
