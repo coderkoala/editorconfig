@@ -3,6 +3,7 @@
   "files.autoSave": "afterDelay",
   "blade.format.enable": true,
   "php.validate.executablePath": "C:\\php-7.4.3\\php.exe",
+  "phpcs.executablePath": "C:\\Users\\IamTr\\AppData\\Roaming\\Composer\\vendor\\bin\\phpcs",
   "php.executablePath": "C:\\php-7.4.3\\php.exe",
   "phpfmt.php_bin": "C:\\php-7.4.3\\php.exe",
   "editor.tabSize": 4,
