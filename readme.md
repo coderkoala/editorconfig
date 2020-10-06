@@ -1,14 +1,133 @@
-Let's get started...
+# Getting up and ready with an EMacs setup for cpp development
 
-Contents
+Steps
+---
 
-1 Upgrade debian distribution to testing 1.1 Update distribution 1.2 Configure /etc/apt/sources.list 1.3 Upgrade distribution 2 Install ia32-libs 3 Enable unattended upgrades 4 Install emacs (for debian) 5 Install emacs (for ubuntu) 6 Install open ssh server 7 Install the Linux Standard Base (lsb) package 8 Install Mosh (mobile shell ssh replacement) 9 Install cmake 10 install python-dev 11 Install automake and autoconf 12 Install prerequisites 13 Customize message of the day 14 (Ubuntu Only) Shrink the verbose SSH welcome message 15 Set hostname (Ubuntu) 16 Randomize bash prompt color based on hostname 16.1 edit \~/.bashrc and set PS1 as follows: 16.2 Reload .bashrc 17 Upgrade to GCC-4.9 (for Mac OS X) 18 Upgrade to GCC-4.9 From Source (for linux) 18.1 configure gcc build: 18.2 build and install: 18.3 Update the gcc and g++ symbolic links 18.4 Test g++ 4.9 19 Install Clang 19.1 install prerequisites for LLDB 19.2 download and build clang 19.3 edit \~/.bashrc to add /usr/local/llvm-3.4/bin to your path and set CC and CXX accordingly: 19.4 Reload .bashrc 19.5 Edit /etc/sudoers as follows: 19.6 If you are using ubuntu, edit /etc/environment as follows: 19.7 Add the LLVM libraries by editing /etc/ld.so.conf.d/llvm.conf 20 Disable max\_align\_t when clang is being used: 21 Test clang 21.1 build and run: 22 Install gdb for getting a stacktrace from core dump 22.1 Test using gdb to print stacktraces from core dumps 22.2 How to programmatically enable core dumps from within your C++ program, and examine backtraces with LLDB 23 Install Clang static analysis tools 23.1 Test clang static analysis tools: 24 Install Intel® C++ Composer XE for Linux (64-bit target only) (optional) 24.1 Modify /etc/sudoers as follows: 24.2 If you are using ubuntu, edit /etc/environment as follows: 24.3 Add the Intel libraries by editing /etc/ld.so.conf.d/intel.conf 24.4 Test the Intel C++ compiler: 25 Install Intel® C++ Composer XE for Windows (64-bit target only) (optional) 25.1 Satisfy System requirements: 25.2 Set default configuration switches for running the Intel C++ Compiler under Windows 25.3 Test Intel C++ compiler: 26 Install zlib from source On Linux 27 Install openssl development library for Linux or Mac OS X 28 Install openssl development library for Windows 29 Install Boost 29.1 install ICU: 29.2 install zlib: 29.3 install libbz2 29.4 download boost source: 29.5 remove existing installation: 29.6 Build and install boost: 29.6.1 If you are using the Intel C++ Compiler, build and install libboost like so: 29.7 Build and install boost under Microsoft Windows: 29.8 Test boost: 30 How to patch boost::asio::ssl to support Ephemeral Diffie-Hellman (optional) 31 Build boost HTML documentation (optional) 32 Install Google sparsehash 33 Test Google Sparse Hash 34 Install the Eigen C++ linear algebra library 35 Test the Eigen C++ linear algebra library 35.1 Build and run eigen test program 36 Configure Intel Threading Building Blocks (this assumes you have installed the Intel C++ compiler) 36.1 resolve naming conflicts in /usr/include/tbb/internal/*flow*graph\_join\_impl.h and /usr/include/x86\_64-linux-gnu/bits/termios.h 36.2 Test Intel TBB: 37 Install ISPC (Intel SPMD Program Compiler) 37.1 Test Intel SPMD Program Compiler (ISPC) 38 Install SDL (Simple DirectMedia Layer) 38.1 Install SDL on Linux or Mac OS X 38.2 Install SDL On Windows 38.3 Test SDL: 38.3.1 Build and run test SDL program: 39 Install gcutil for Google Compute Engine 39.1 download gcutil https://code.google.com/p/google-compute-engine-tools/downloads/list 39.2 create a symbolic link to the gcutil binary 39.3 Authenticate to Google Compute Engine 39.4 specify a default project id: 40 Install gsutil for Google Cloud Storage 40.1 download gsutil 40.2 create a symbolic link to the gsutil binary 40.3 authenticate 40.4 copy objects to your bucket in parallel 41 Automatically chdir into your development directory upon login (optional): 42 Increase the maximum number of open file descriptors (optional): 43 Generate new host keys 44 Install cdecl for explaining C and C++ type declarations 45 Install libevent 45.1 Install libevent on Windows from cmd.exe: 45.2 Test libevent: 46 Install Boehm-Demers-Weiser conservative garbage collector 46.1 Test boehmgc 47 Configure Emacs 47.1 enable frame-fns 47.2 Install Yasnippet For Emacs 47.3 Install Emacs Autocomplete Mode 47.4 Install xcscope 47.5 Use Google's C++ Style 47.6 Enable Emacs Autopair Mode: 47.7 Enable "google this" functionality for emacs 47.8 Enable flymake mode with syntax error message display for C and C++ 47.9 Setup clang-format (automatically format C/C++) for use with emacs 48 Edit \~/.emacs to look this like: 49 Setup emacsclient to autospawn the emacs daemon (optional) 50 Synopsis of our customized emacs shortcuts 51 Optional add-ons to this C++ dev environment: 51.1 Setting up PNaCl C++ development environment on Linux 51.2 Setting up emscripten development environment on Linux
+1. Upgrade debian distribution to testing 
+    * Update distribution 
+    * Configure /etc/apt/sources.list 
+    * Upgrade distribution 
+2. Install ia32-libs 
+3. Enable unattended upgrades
+4.  Install emacs (for debian) 
+5.  Install emacs (for ubuntu) 
+6.  Install open ssh server 
+7.  Install the Linux Standard Base (lsb) package 
+8.   Install Mosh (mobile shell ssh replacement) 
+9.   Install cmake 
+10. Install python-dev 
+11. Install automake and autoconf 
+12. Install prerequisites 
+13. Customize message of the day 
+14. (Ubuntu Only) Shrink the verbose SSH welcome message 
+15. Set hostname (Ubuntu) 
+16. Randomize bash prompt color based on hostname 
+    * 16.1 edit \~/.bashrc and set PS1 as follows: 
+    * 16.2 Reload .bashrc 
+17. Upgrade to GCC-4.9 (for Mac OS X) 
+18. Upgrade to GCC-4.9 From Source (for linux) 
+    * 18.1 configure gcc build: 
+    * 18.2 build and install: 
+    * 18.3 Update the gcc and g++ symbolic links 
+    * 18.4 Test g++ 4.9 
+19. Install Clang 
+    * 19.1 install prerequisites for LLDB 
+    * 19.2 download and build clang 
+    * 19.3 edit \~/.bashrc to add /usr/local/llvm-3.4/bin to your path and set CC and CXX accordingly
+    * 19.4 Reload .bashrc 
+    * 19.5 Edit /etc/sudoers as follows: 
+    * 19.6 If you are using ubuntu, edit /etc/environment as follows: 
+    * 19.7 Add the LLVM libraries by editing /etc/ld.so.conf.d/llvm.conf 
+20. Disable max\_align\_t when clang is being used: 
+21. Test clang 
+    * 21.1 build and run: 
+22. Install gdb for getting a stacktrace from core dump 
+    * 22.1 Test using gdb to print stacktraces from core dumps 
+    * 22.2 How to programmatically enable core dumps from within your C++ program, and examine backtraces with LLDB 
+23. Install Clang static analysis tools 
+    * 23.1 Test clang static analysis tools: 
+24. Install Intel® C++ Composer XE for Linux (64-bit target only) (optional) 
+    * 24.1 Modify /etc/sudoers as follows: 
+    * 24.2 If you are using ubuntu, edit /etc/environment as follows: 
+    * 24.3 Add the Intel libraries by editing /etc/ld.so.conf.d/intel.conf 
+    * 24.4 Test the Intel C++ compiler: 
+25. Install Intel® C++ Composer XE for Windows (64-bit target only) (optional) 
+    * 25.1 Satisfy System requirements: 
+    * 25.2 Set default configuration switches for running the Intel C++ Compiler under Windows 
+    * 25.3 Test Intel C++ compiler
+26. Install zlib from source On Linux 
+27. Install openssl development library for Linux or Mac OS X 
+28. Install openssl development library for Windows 
+29. Install Boost 
+    * 29.1 install ICU: 
+    * 29.2 install zlib: 
+    * 29.3 install libbz2 
+    * 29.4 download boost source: 
+    * 29.5 remove existing installation: 
+    * 29.6 Build and install boost: 
+    * 29.6.1 If you are using the Intel C++ Compiler, build and install libboost like so: 
+    * 29.7 Build and install boost under Microsoft Windows: 
+    * 29.8 Test boost: 
+30. How to patch boost::asio::ssl to support Ephemeral Diffie-Hellman (optional) 
+31. Build boost HTML documentation (optional) 
+32. Install Google sparsehash 
+33. Test Google Sparse Hash 
+34. Install the Eigen C++ linear algebra library 
+35. Test the Eigen C++ linear algebra library 
+    * 35.1 Build and run eigen test program 
+36. Configure Intel Threading Building Blocks (this assumes you have installed the Intel C++ compiler)
+    * 36.1 resolve naming conflicts in `/usr/include/tbb/internal/*flow*graph\_join\_impl.h` and `/usr/include/x86\_64-linux-gnu/bits/termios.h` 
+    * 36.2 Test Intel TBB: 
+37. Install ISPC (Intel SPMD Program Compiler) 
+    * 37.1 Test Intel SPMD Program Compiler (ISPC) 
+38. Install SDL (Simple DirectMedia Layer) 
+    * 38.1 Install SDL on Linux or Mac OS X 
+    * 38.2 Install SDL On Windows 
+    * 38.3 Test SDL: 
+    * 38.3.1 Build and run test SDL program: 
+39. Install gcutil for Google Compute Engine 
+    * 39.1 download gcutil https://code.google.com/p/google-compute-engine-tools/downloads/list 
+    * 39.2 create a symbolic link to the gcutil binary 
+    * 39.3 Authenticate to Google Compute Engine 
+    * 39.4 specify a default project id
+40. Install gsutil for Google Cloud Storage 
+    * 40.1 download gsutil 
+    * 40.2 create a symbolic link to the gsutil binary 
+    * 40.3 authenticate 
+    * 40.4 copy objects to your bucket in parallel 
+41. Automatically chdir into your development directory upon login (optional): 
+42. Increase the maximum number of open file descriptors (optional): 
+43. Generate new host keys 
+44. Install cdecl for explaining C and C++ type declarations 
+45. Install libevent 
+    * 45.1 Install libevent on Windows from cmd.exe: 
+    * 45.2 Test libevent: 
+46. Install Boehm-Demers-Weiser conservative garbage collector 
+    * 46.1 Test boehmgc 
+47. Configure Emacs 
+    * 47.1 enable frame-fns 
+    * 47.2 Install Yasnippet For Emacs 
+    * 47.3 Install Emacs Autocomplete Mode 
+    * 47.4 Install xcscope 
+    * 47.5 Use Google's C++ Style 
+    * 47.6 Enable Emacs Autopair Mode: 
+    * 47.7 Enable "google this" functionality for emacs 
+    * 47.8 Enable flymake mode with syntax error message display for C and C++ 
+    * 47.9 Setup clang-format (automatically format C/C++) for use with emacs 
+48. Edit \~/.emacs to look this like: 
+49. Setup emacsclient to autospawn the emacs daemon (optional) 
+50. Synopsis of our customized emacs shortcuts 
+51. Optional add-ons to this C++ dev environment: 
+    * 51.1 Setting up PNaCl C++ development environment on Linux 
+    * 51.2 Setting up emscripten development environment on Linux
 
 Upgrade debian distribution to testing
+---
 
-Update distribution
+##### Update distribution
 
-sudo apt-get update sudo apt-get upgrade sudo apt-get install zile Configure /etc/apt/sources.list
+```
+sudo apt-get update sudo apt-get upgrade sudo apt-get install zile Configure /etc/apt/sources.list`
 
 deb http://http.debian.net/debian testing main deb-src http://http.debian.net/debian testing main deb http://security.debian.org/ testing/updates main deb-src http://security.debian.org/ testing/updates main Upgrade distribution
 
@@ -53,9 +172,11 @@ hostnamecolor=\$(hostname | od | tr ' ' '' | awk '{total = total + \(1}END{print
 . \~/.bashrc Upgrade to GCC-4.9 (for Mac OS X)
 
 sudo port install gcc49 sudo port select gcc mp-gcc49 sudo port select --list gcc Upgrade to GCC-4.9 From Source (for linux)
+```
 
-NOTE: If you have followed the instructions on this page so far, you should already have an older version of gcc installed at this point. We will be upgrading to the latest version of GCC so that we can use C++14 Install prerequisites on Linux: sudo apt-get install libgmp3-dev libgmp-dev libmpfr-dev libmpc-dev flex bison libc6-dev gcc-multilib Download source and build: sudo mkdir /gcc sudo chmod 777 /gcc svn co svn://gcc.gnu.org/svn/gcc/trunk /gcc
+##### NOTE: If you have followed the instructions on this page so far, you should already have an older version of gcc installed at this point. We will be upgrading to the latest version of GCC so that we can use C++14 Install prerequisites on Linux: `sudo apt-get install libgmp3-dev libgmp-dev libmpfr-dev libmpc-dev flex bison libc6-dev gcc-multilib Download source and build: sudo mkdir /gcc sudo chmod 777 /gcc svn co svn://gcc.gnu.org/svn/gcc/trunk /gcc`
 
+```
 cd /gcc ./contrib/download\_prerequisites
 
 mkdir /gcc/objdir cd /gcc/objdir configure gcc build:
@@ -78,25 +199,38 @@ sudo rm /usr/bin/gcov sudo ln -s /usr/bin/gcov-4.9 /usr/bin/gcov
 
 sudo rm /usr/bin/c++ sudo ln -s /usr/bin/c++-4.9 /usr/bin/c++ Test g++ 4.9
 
-Edit /tmp/generalized-lambda.cpp: \#include <iostream> \#include <algorithm>
+Edit /tmp/generalized-lambda.cpp: 
+    
+    \#include <iostream> 
+    \#include <algorithm>
+    void f(std::size\_t);
+    int main() { 
+    int x = 4; 
+    auto y = [&r = x, x = x+1]()-\>
+    		 int { 
+                 r += 2; return x+2; }(); // Updates ::x to 6, and initializes y to 7.
+                 std::cout \<\< y \<\< std::endl;
 
-void f(std::size\_t);
+                 int input; std::cin \>\> input;
+                 f(input);
+                 return 0; 
+                 }
 
-int main() { int x = 4; auto y = [&r = x, x = x+1]()-\>int { r += 2; return x+2; }(); // Updates ::x to 6, and initializes y to 7.
+    void f(std::size\_t n) { int a[n]; for (std::size\_t i = 0; i \< n; ++i) a[i] = 2\*i; std::sort(a, a+n);
 
-std::cout \<\< y \<\< std::endl;
+    for( int i = 0; i \< n; i++) { 
+        std::cout \<\< a[i] \<\< " "; 
+       } 
+    std::cout \<\< std::endl; 
+    } 
 
-int input; std::cin \>\> input;
+```
+##### Build and run: `cd /tmp; g++-4.9 -std=c++1y generalized-lambda.cpp; ./a.out Verify which libraries we are linking against: ldd a.out` 
 
-f(input);
+##### Install Clang
+```
 
-return 0; }
-
-void f(std::size\_t n) { int a[n]; for (std::size\_t i = 0; i \< n; ++i) a[i] = 2\*i; std::sort(a, a+n);
-
-for( int i = 0; i \< n; i++) { std::cout \<\< a[i] \<\< " "; } std::cout \<\< std::endl; } Build and run: cd /tmp; g++-4.9 -std=c++1y generalized-lambda.cpp; ./a.out Verify which libraries we are linking against: ldd a.out Install Clang
-
-install prerequisites for LLDB
+##### install prerequisites for LLDB
 
 NOTE: LLDB is optional sudo apt-get install swig libreadline-dev libeditline-dev libedit-dev download and build clang
 
